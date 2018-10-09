@@ -1,0 +1,34 @@
+
+<div class="login-form">
+  <form action="" method="POST" [formGroup]="login_form">
+    <div class="top">
+      <h2>Login</h2>
+    </div>
+    <div class="form-area">
+      <div class="group">
+        <input type="text" class="form-control" formControlName="email" tabindex="1" id="email" [(ngModel)]="loginData.email" placeholder="Username" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  >
+        <div *ngIf="submitted && f.email.errors" class="errors">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+            <div *ngIf="f.email.errors.email">Enter valid email</div>
+        </div>
+        <i class="fa fa-user"></i>
+      </div>
+      <div class="group">
+        <input type="password" class="form-control" formControlName="password" tabindex="2" id="password" [(ngModel)]="loginData.password" placeholder="Password">
+        <div *ngIf="submitted && f.password.errors" class="errors">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+        <i class="fa fa-key"></i>
+      </div>
+      <div class="checkbox checkbox-primary">
+        <input id="checkbox101" type="checkbox" tabindex="3" checked>
+        <label for="checkbox101"> Remember Me</label>
+      </div>
+      <button type="submit" class="btn btn-default btn-block" (click)="signin()" tabindex="4">LOGIN</button>
+    </div>
+  </form>
+  <div class="footer-links row">
+    <div class="col-xs-6"><a href="#"><i class="fa fa-external-link"></i> Register Now</a></div>
+    <div class="col-xs-6 text-right"><a href="#"><i class="fa fa-lock"></i> Forgot password</a></div>
+  </div>
+</div>

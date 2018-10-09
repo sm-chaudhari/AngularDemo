@@ -1,0 +1,31 @@
+<a routerLink="/users/add"  class="btn btn-primary" style="float:right;margin: 10px;">Add New</a>
+<table datatable class="row-border hover">
+  <thead>
+  <tr>
+      <th>
+          #
+      </th>
+      <th>
+          Name
+      </th>
+      <th>
+       Address
+      </th>
+      <th>
+          Email
+      </th>
+      <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of data;let i = index;">
+      <td>{{1 + i}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.address}}</td>
+      <td>{{user.email}}</td>
+      <td><a [routerLink]="['/users/edit', user._id]">Edit</a> | <a href="javascript:;" (click)="delete(user._id)">Delete</a> | <a href="javascript:;" >View</a></td>
+  </tr>
+  </tbody>
+  <tfoot>
+  </tfoot>
+</table>

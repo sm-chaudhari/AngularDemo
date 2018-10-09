@@ -1,0 +1,27 @@
+<div id="top" class="clearfix">
+  <div class="applogo">
+    <a href="#" class="logo" style="font-size: 14px;">Admin Panel</a>
+  </div>
+  <a href="#" class="sidebar-open-button"><i class="fa fa-bars"></i></a>
+  <a href="#" class="sidebar-open-button-mobile"><i class="fa fa-bars"></i></a>
+  <ul class="top-right">
+    <li class="dropdown link">
+      <a href="#" data-toggle="dropdown" class="dropdown-toggle profilebox"><img src="img/profileimg.png" alt="img"><b>Angular</b><span
+          class="caret"></span></a>
+      <ul class="dropdown-menu dropdown-menu-list dropdown-menu-right">
+        <li role="presentation" class="dropdown-header">Profile</li>
+        <li><a href="javascript:;" (click)="logout()"><i class="fa falist fa-power-off"></i> Logout</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div class="sidebar clearfix">
+  <ul class="sidebar-panel nav">
+    <li class="sidetitle">MAIN</li>
+    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><span class="icon color5"><i class="fa fa-home"></i></span>Dashboard</a></li>
+    <li><a routerLink="/users" routerLinkActive='active'><span class="icon color6"><i class="fa fa-envelope-o"></i></span>Users</a></li>
+    <li><a routerLink="/menus"  routerLinkActive='active'><span class="icon color11"><i class="fa fa-diamond"></i></span>Menus</a></li>
+    <li><a routerLink="/categories" routerLinkActive='active'><span class="icon color8"><i class="fa fa-calendar-o"></i></span>Categories</a></li>
+    <li><a routerLink="/items" routerLinkActive='active'><span class="icon color8"><i class="fa fa-calendar-o"></i></span>Items</a></li>
+  </ul>
+</div>

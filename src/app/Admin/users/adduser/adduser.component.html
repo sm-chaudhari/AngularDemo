@@ -1,0 +1,59 @@
+<div class="col-md-12 col-lg-12">
+  <div class="panel panel-default">
+    <div class="panel-title">
+      {{title}}
+      <ul class="panel-tools">
+        <li><a class="icon minimise-tool"><i class="fa fa-minus"></i></a></li>
+        <li><a class="icon expand-tool"><i class="fa fa-expand"></i></a></li>
+        <li><a class="icon closed-tool"><i class="fa fa-times"></i></a></li>
+      </ul>
+    </div>
+    <div class="panel-body">
+      <form class="form-horizontal" method="POST" [formGroup]="addUser">
+        <div class="form-group">
+          <label class="col-sm-2 control-label form-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" formControlName="name" #name [(ngModel)]="result.name" id="name" name="name" placeholder="Enter Name" tabindex="1">
+            <div *ngIf="submitted && f.name.errors" class="errors">
+                <div *ngIf="f.name.errors.required">Name is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label form-label">Address</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control"  formControlName="address" #address [(ngModel)]="result.address" placeholder="Enter Address" tabindex="2">
+            <div *ngIf="submitted && f.address.errors" class="errors">
+                <div *ngIf="f.address.errors.required">Address is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label form-label" for="email">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" #email formControlName="email" [(ngModel)]="result.email" name="email" placeholder="Enter Email" tabindex="3">
+            <div *ngIf="f.email.errors" class="errors">
+                <div *ngIf="submitted && f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Enter valid email</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group"  *ngIf="pswd">
+          <label class="col-sm-2 control-label form-label" for="password">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="password" formControlName="password" [(ngModel)]="result.password" name="password" placeholder="Enter Password" tabindex="4">
+            <div *ngIf="submitted && f.password.errors" class="errors">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Enter minimum 5 character</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" (click)="Add()" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
